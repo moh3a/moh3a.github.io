@@ -1,15 +1,15 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_NAME,} from '../consts';
+import { SITE_NAME,WRITE_URL} from '~/consts';
 ---
 
 <header>
 	<nav>
 		<h2><a href="/"><img alt={SITE_NAME} src="/favicon.ico" height="40" width="40" /></a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/topics">Topics</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href={WRITE_URL} target="_blank">Write</HeaderLink>
 		</div>
 	</nav>
 </header>
