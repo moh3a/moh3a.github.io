@@ -7,6 +7,7 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://moh3a-portfolio.vercel.app",
   integrations: [
     mdx(),
     sitemap(),
