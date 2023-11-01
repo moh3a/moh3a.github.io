@@ -1,6 +1,8 @@
-# reglini-dz Blog
+# moh3a
 
-## todo
+## Portfolio
+
+### todo
 
 - logo: fix logo to make it bigger instead of mostly nothing
 - add fetching blog server side
@@ -8,7 +10,7 @@
 - add page: `explore topics` for tags
 - add dark theme
 
-## first blog posts
+### first blog posts
 
 - basics of programming in js/ts
 - create a video chat application

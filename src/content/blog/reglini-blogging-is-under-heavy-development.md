@@ -1,6 +1,6 @@
 ---
-title: "reglini blogging is under heavy development"
-description: "A new reglini-dz platform for content curation."
+title: "Moh3a's blog is under heavy development"
+description: "My blog."
 pubDate: "Oct 24 2023"
 heroImage: "/blog-placeholder-3.jpg"
 ---

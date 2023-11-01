@@ -1,11 +1,11 @@
 {
-  "name": "reglini-blog",
+  "name": "portfolio",
   "type": "module",
   "version": "0.0.2",
   "author": "moh3a",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moh3a/reglini-blog"
+    "url": "https://github.com/moh3a/portfolio"
   },
   "scripts": {
     "dev": "astro dev",
@@ -22,6 +22,6 @@
     "@astrojs/vercel": "^5.0.2",
     "@fontsource/ibm-plex-serif": "^5.0.8",
     "astro": "^3.3.3",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.3.4"
   }
 }
