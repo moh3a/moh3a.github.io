@@ -5,7 +5,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://moh3a.dev",
+  site: "https://moh3a.github.io",
+  base: "/portfolio",
   integrations: [
     mdx(),
     sitemap(),
