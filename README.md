@@ -4,7 +4,7 @@
 
 ### todo
 
-- add dark theme
+- fix dark theme styling. follor [this for inspiration](https://github.com/moh3a/write/blob/main/src/styles/globals.css)
 
 ### first blog posts
 
