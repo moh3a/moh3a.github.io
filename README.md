@@ -4,7 +4,7 @@
 
 ### todo
 
-- fix dark theme styling. follor [this for inspiration](https://github.com/moh3a/write/blob/main/src/styles/globals.css)
+- go back to github pages if possible
 
 ### first blog posts
 
