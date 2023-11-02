@@ -18,7 +18,10 @@ export default function ThemeToggle() {
   });
 
   return (
-    <button onClick={handleClick} className="px-2">
+    <button
+      onClick={handleClick}
+      className="px-2 border-b-[1px] border-b-transparent hover:border-b-[var(--primary)]"
+    >
       {theme.value === "light" ? <MoonStar /> : <Sun />}
     </button>
   );

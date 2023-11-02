@@ -2,10 +2,6 @@
 
 ## Portfolio
 
-### todo
-
-- go back to github pages if possible
-
 ### first blog posts
 
 - basics of programming in js/ts
