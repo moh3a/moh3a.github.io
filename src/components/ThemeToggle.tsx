@@ -20,8 +20,9 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={handleClick}
-      className="px-2 border-b-[1px] border-b-transparent hover:border-b-[var(--primary)]"
+      className="p-2 border-b-[1px] border-b-transparent hover:border-b-[var(--primary)]"
     >
+      <span class="sr-only">dark theme toggle</span>
       {theme.value === "light" ? <MoonStar /> : <Sun />}
     </button>
   );

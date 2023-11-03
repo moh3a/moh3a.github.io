@@ -18,12 +18,12 @@ const PATH = BASE_PATH + lang + "/";
 		<div class="flex items-center justify-between">
 			<h2 class="logo">
 				<a href={PATH} class="flex">
-					<img alt={SITE_NAME} src={`${BASE_PATH}favicon.ico`} height="40" width="40" />
+					<img alt={SITE_NAME} src={`${BASE_PATH}favicon.ico`} height={'40px'} width={"40px"} />
 				</a>
 			</h2>
-			<div class="flex">
-				<Locale />
+			<div class="flex items-center">
 				<ThemeToggle client:only="preact" />
+				<Locale />
 				<a href="https://www.linkedin.com/in/mohamed-ait-abdelmalek-moh3a" target="_blank" rel="noreferrer">
 					<span class="sr-only">Chat with me on LinkedIn</span>
 					<Linkedin />
