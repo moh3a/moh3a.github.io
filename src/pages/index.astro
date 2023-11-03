@@ -1,18 +1,5 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { BASE_PATH } from "../consts";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div class="text-5xl font-extrabold">my name is<br/> <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">mohamed ait abdelmalek</span></div>
-		</main>
-	</body>
-</html>
+<meta http-equiv="refresh" content={`0;url=${BASE_PATH}en/`} />

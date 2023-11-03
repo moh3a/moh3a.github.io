@@ -1,0 +1,17 @@
+---
+import { languages } from '../i18n/ui';
+
+const changeLocale = (lang: string) => {
+  const n = Astro.url.pathname.split('/')
+  n[2] = lang
+  return n.join('/')
+}
+
+---
+<ul>
+  {Object.entries(languages).map(([lang, label]) => (
+    <li>
+      <a href={changeLocale(lang)}>{label}</a>
+    </li>
+  ))}
+</ul>

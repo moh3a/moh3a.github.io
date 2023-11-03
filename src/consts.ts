@@ -3,3 +3,4 @@ export const SITE_TITLE = `Code Here | ${SITE_NAME}`;
 export const SITE_DESCRIPTION = "";
 
 export const SITE_URL = `https://moh3a.dev`;
+export const BASE_PATH = `/portfolio/`;

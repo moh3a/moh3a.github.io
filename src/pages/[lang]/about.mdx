@@ -1,4 +1,9 @@
-import Layout from "../layouts/MdxPageLayout.astro";
+import Layout from "../../layouts/MdxPageLayout.astro";
+import { languages } from "../../i18n/ui";
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((path) => ({ params: { lang: path } }));
+}
 
 <Layout title="About Me" description="Talking about myself">
 

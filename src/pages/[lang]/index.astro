@@ -1,0 +1,18 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl,useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map(path => ({ params: { lang: path } }))
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<div class="text-5xl font-extrabold">{t('home.mynameis')}<br/> <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">{t('home.name')}</span>🇩🇿</div>
+</Layout>

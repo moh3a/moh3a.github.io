@@ -2,6 +2,14 @@
 
 ## Portfolio
 
+## todo
+
+- fix content: current `blog/[lang]/slug` -> `[lang]/blog/slug`
+- choose different name from `portfolio`
+- add [CV route](https://drive.google.com/file/d/1G0GGXf1G-2XCcqqdxX7xz-IWX38EuiWC/view) and export as PDF
+- add adsense
+- fix lighthouse performace
+
 ### first blog posts
 
 - basics of programming in js/ts

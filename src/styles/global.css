@@ -36,7 +36,6 @@ body {
   font-family: "IBM Plex Serif", sans-serif;
   margin: 0;
   padding: 0;
-  text-align: left;
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -46,10 +45,9 @@ body {
   line-height: 1.5;
 }
 main {
-  width: 720px;
-  max-width: calc(100% - 2em);
+  max-width: 56rem;
   margin: auto;
-  padding: 3em 1em;
+  padding: 1.5em;
   min-height: 60vh;
 }
 h1,
