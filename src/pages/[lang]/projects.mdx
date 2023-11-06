@@ -1,5 +1,6 @@
 import Layout from "../../layouts/MdxPageLayout.astro";
 import { languages } from "../../i18n/ui";
+import Project from "../../components/Project.astro";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((path) => ({ params: { lang: path } }));
@@ -9,5 +10,27 @@ export async function getStaticPaths() {
   title="Projects"
   description="A list of projects that I have contributed to and authored"
 >
-  Todo
+  <Project
+    user="moh3a"
+    repo="ae_sdk"
+    desc="A simple and type-safe SDK for Aliexpress (system tools, dropshipping and affiliate) APIs."
+    repoTopLangShieldLink="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white"
+    tags={["typescript", "sdk", "aliexpress"]}
+  />
+  <Project
+    user="moh3a"
+    repo="reglini"
+    desc="An ecommerce for shopping from Aliexpress in algerian dinars."
+    website="https://reglini-dz.com"
+    repoTopLangShieldLink="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white"
+    tags={[
+      "nextjs",
+      "vercel",
+      "ecommerce",
+      "internationalization",
+      "pwa",
+      "typescript",
+      "prisma",
+    ]}
+  />
 </Layout>

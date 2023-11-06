@@ -1,0 +1,38 @@
+---
+import { Github, Globe } from "lucide-preact";
+
+type Props = {
+    user: string;
+    repo: string;
+    desc: string;
+    website?: string;
+    repoTopLangShieldLink?: string;
+    tags?: string[];
+};
+const { desc, repo, tags, user, website, repoTopLangShieldLink } = Astro.props;
+---
+
+<div class="rounded-md p-4 m-2 shadow-xl w-full">
+    <div class="flex justify-between items-center">
+        <h3 class="">{user}/{repo}</h3>
+        <div class="flex gap-x-2">
+            {website && <a  href={website} target="_blank" rel="noreferrer">
+                <span class="sr-only">Website</span>
+                <Globe />
+            </a>}
+            <a  href={`https://github.com/${user}/${repo}`} target="_blank" rel="noreferrer">
+                <span class="sr-only">Check out {user}/{repo}</span>
+                <Github />
+            </a>
+        </div>
+    </div>
+    <div class="flex gap-x-2">
+        <img alt="GitHub Repo stars" src={`https://img.shields.io/github/stars/${user}/${repo}?style=social`}>
+        {repoTopLangShieldLink && <img alt="GitHub top language" src={repoTopLangShieldLink} />}
+    </div>
+    <p class="py-4">{desc}</p>
+    <div class="flex gap-x-2 select-none flex-wrap">
+        {tags?.map((tag) => <div class="font-semibold text-sm p-1 m-0.5 rounded-md bg-neutral-300 dark:bg-neutral-900">{tag}</div>)}
+    </div>
+</div>
+ 
