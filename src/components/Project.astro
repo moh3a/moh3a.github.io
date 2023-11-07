@@ -12,7 +12,7 @@ type Props = {
 const { desc, repo, tags, user, website, repoTopLangShieldLink } = Astro.props;
 ---
 
-<div class="rounded-md p-4 m-2 shadow-xl w-full">
+<div class="rounded-md p-4 mx-2 my-10 shadow-lg w-full">
     <div class="flex justify-between items-center">
         <h3 class="">{user}/{repo}</h3>
         <div class="flex gap-x-2">
@@ -35,4 +35,3 @@ const { desc, repo, tags, user, website, repoTopLangShieldLink } = Astro.props;
         {tags?.map((tag) => <div class="font-semibold text-sm p-1 m-0.5 rounded-md bg-neutral-300 dark:bg-neutral-900">{tag}</div>)}
     </div>
 </div>
- 

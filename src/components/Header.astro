@@ -4,7 +4,7 @@ import { Github, Linkedin } from "lucide-preact";
 import HeaderLink from './HeaderLink.astro';
 import Locale from "./Locale.astro";
 import ThemeToggle from './ThemeToggle';
-import { BASE_PATH, LINKEDIN_LINK, SITE_NAME} from '../consts';
+import { BASE_PATH, GITHUB_LINK, LINKEDIN_LINK, SITE_NAME} from '../consts';
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -28,7 +28,7 @@ const PATH = BASE_PATH + lang + "/";
 					<span class="sr-only">Chat with me on LinkedIn</span>
 					<Linkedin />
 				</a>
-				<a href="https://github.com/moh3a" target="_blank" rel="noreferrer">
+				<a href={GITHUB_LINK} target="_blank" rel="noreferrer">
 					<span class="sr-only">Check me on Github</span>
 					<Github />
 				</a>

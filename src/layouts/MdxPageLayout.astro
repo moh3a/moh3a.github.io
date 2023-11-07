@@ -10,7 +10,7 @@ const { title, description } = Astro.props;
 	<article>
 		<div>
 			<div class="mb-4 py-4 px-0 text-center leading-1">
-				<h1 class="mb-2">{title}</h1>
+				<h1 class="mb-2">{title.split("|")[0]}</h1>
 				<hr />
 			</div>
 			<slot />

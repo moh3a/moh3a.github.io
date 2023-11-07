@@ -1,0 +1,15 @@
+---
+type Props = {
+    title: string,
+};
+
+const { title } = Astro.props;
+---
+<div class="shadow-md my-10 rounded-md p-4">
+    <h4 class="text-center">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+            {title}
+        </span>
+    </h4>
+    <slot />
+</div>

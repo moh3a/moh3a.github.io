@@ -1,11 +1,12 @@
 import Layout from "../../layouts/MdxPageLayout.astro";
 import { languages } from "../../i18n/ui";
+import { SEO } from "../../consts";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((path) => ({ params: { lang: path } }));
 }
 
-<Layout title="About Me" description="Talking about myself">
+<Layout title={SEO.about.title} description={SEO.about.desc}>
 
 With several years of experience in customer service and multiple positions related to industrial production, combined with a solid academic background (M.A) in geotechnics, I find that my ability to acquire new knowledge is my strength. But a few years ago, during my journey, I discovered what I yearned for.
 
