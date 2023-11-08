@@ -2,7 +2,8 @@
 title: "Markdown دليل أسلوب"
 description: "فيما يلي عينة من بعض قواعد Markdown الأساسية التي يمكن استخدامها عند كتابة محتوى Markdown في Astro."
 pubDate: "Jul 01 2022"
-heroImage: "/portfolio/blog-placeholder-1.jpg"
+heroImage: "/blog-placeholder-1.jpg"
+# heroImage: "/portfolio/blog-placeholder-1.jpg"
 ---
 
 فيما يلي عينة من بعض قواعد Markdown الأساسية التي يمكن استخدامها عند كتابة محتوى Markdown في Astro.
@@ -39,7 +40,9 @@ heroImage: "/portfolio/blog-placeholder-1.jpg"
 
 #### Output
 
-![blog placeholder](/portfolio/blog-placeholder-about.jpg)
+![blog placeholder](/blog-placeholder-about.jpg)
+
+<!-- ![blog placeholder](/portfolio/blog-placeholder-about.jpg) -->
 
 ## Blockquotes
 

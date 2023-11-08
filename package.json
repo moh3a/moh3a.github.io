@@ -1,11 +1,11 @@
 {
-  "name": "portfolio",
+  "name": "moh3a",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "moh3a",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moh3a/portfolio"
+    "url": "https://github.com/moh3a/moh3a.github.io"
   },
   "scripts": {
     "dev": "astro dev",

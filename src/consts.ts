@@ -21,7 +21,7 @@ export const SEO = {
   },
 };
 
-export const BASE_PATH = `/portfolio/`;
+export const BASE_PATH = `/`;
 
 export const LINKEDIN_LINK =
   "https://www.linkedin.com/in/mohamed-ait-abdelmalek-moh3a";

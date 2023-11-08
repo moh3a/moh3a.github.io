@@ -8,7 +8,7 @@ import preact from "@astrojs/preact";
 // https://astro.build/config
 export default defineConfig({
   site: "https://moh3a.github.io",
-  base: "/portfolio",
+  // base: "/portfolio",
   integrations: [
     mdx(),
     sitemap(),
