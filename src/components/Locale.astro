@@ -4,9 +4,9 @@ import { getLangFromUrl } from '../i18n/utils';
 import { Check, Globe } from "lucide-preact";
 
 const changeLocale = (lang: string) => {
-  const n = Astro.url.pathname.split('/')
-  n[2] = lang
-  return n.join('/')
+  const n = Astro.url.pathname.split('/');
+  n[1] = lang;
+  return n.join('/');
 }
 
 const currentLang = getLangFromUrl(Astro.url);

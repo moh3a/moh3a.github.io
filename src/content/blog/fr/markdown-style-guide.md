@@ -3,7 +3,6 @@ title: "Guide de style du Markdown"
 description: "Voici un exemple de syntaxe Markdown de base qui peut être utilisée lors de l'écriture de contenu Markdown dans Astro."
 pubDate: "Jul 01 2022"
 heroImage: "/blog-placeholder-1.jpg"
-# heroImage: "/portfolio/blog-placeholder-1.jpg"
 ---
 
 Voici un exemple de syntaxe Markdown de base qui peut être utilisée lors de l'écriture de contenu Markdown dans Astro.
@@ -39,8 +38,6 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 ```
 
 #### Output
-
-<!-- ![blog placeholder](/portfolio/blog-placeholder-about.jpg) -->
 
 ![blog placeholder](/blog-placeholder-about.jpg)
 

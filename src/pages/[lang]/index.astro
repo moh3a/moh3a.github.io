@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION, BASE_PATH, LINKEDIN_LINK } from '../../consts';
+import { SITE_TITLE, SITE_DESCRIPTION,  LINKEDIN_LINK } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
 import { getLangFromUrl,useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
@@ -23,7 +23,7 @@ const t = useTranslations(lang);
         {t('home.name')}
       </span>
     </div>
-    <img src={`${BASE_PATH}/profile.jpg`} class="z-0 rounded-full basis-1/4 w-40" />
+    <img src={`/profile.jpg`} class="z-0 rounded-full basis-1/4 w-40" />
   </div>
   <MySkills client:only />
   <a href={LINKEDIN_LINK} target="_blank" rel="noreferrer" class="underline decoration-[var(--primary)]" >Get in touch <ArrowRight class="inline hover:animate-bounce" /> </a>

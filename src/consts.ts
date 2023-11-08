@@ -21,8 +21,6 @@ export const SEO = {
   },
 };
 
-export const BASE_PATH = `/`;
-
 export const LINKEDIN_LINK =
   "https://www.linkedin.com/in/mohamed-ait-abdelmalek-moh3a";
 export const GITHUB_LINK = "https://github.com/moh3a";

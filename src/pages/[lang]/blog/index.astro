@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 import FormattedDate from '../../../components/FormattedDate.astro';
 import Layout from '../../../layouts/Layout.astro';
-import { SEO, BASE_PATH } from '../../../consts';
+import { SEO } from '../../../consts';
 import { languages } from '../../../i18n/ui';
 import { getLangFromUrl } from '../../../i18n/utils';
 
@@ -88,7 +88,7 @@ const posts = (await getCollection('blog')).filter(page => page.slug.split('/')[
             {
                 posts.map((post) => (
                     <li>
-                        <a href={`${BASE_PATH + lang}/blog/${post.slug.substring(3)}/`}>
+                        <a href={`/${lang}/blog/${post.slug.substring(3)}/`}>
                             {post.data.heroImage && <img width={720} height={360} src={post.data.heroImage} alt="" />}
                             <h4 class="title">{post.data.title}</h4>
                             <p class="date">

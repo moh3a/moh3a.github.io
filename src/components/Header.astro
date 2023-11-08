@@ -4,13 +4,13 @@ import { Github, Linkedin } from "lucide-preact";
 import HeaderLink from './HeaderLink.astro';
 import Locale from "./Locale.astro";
 import ThemeToggle from './ThemeToggle';
-import { BASE_PATH, GITHUB_LINK, LINKEDIN_LINK, SITE_NAME} from '../consts';
+import {  GITHUB_LINK, LINKEDIN_LINK, SITE_NAME} from '../consts';
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const PATH = BASE_PATH + lang + "/";
+const PATH = "/" + lang + "/";
 ---
 
 <header>
@@ -18,7 +18,7 @@ const PATH = BASE_PATH + lang + "/";
 		<div class="flex items-center justify-between">
 			<h2 class="logo">
 				<a href={PATH} class="flex">
-					<img alt={SITE_NAME} src={`${BASE_PATH}favicon.ico`} height={'40px'} width={"40px"} />
+					<img alt={SITE_NAME} src={`/logo.png`} height={'40px'} width={"40px"} />
 				</a>
 			</h2>
 			<div class="flex items-center">
