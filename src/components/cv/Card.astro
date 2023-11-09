@@ -1,0 +1,15 @@
+---
+type Props = {
+    title: string,
+    period?: string,
+    description?: string
+};
+
+const { title, description, period } = Astro.props;
+---
+
+<div class="p-4 m-2">
+    <h4>{title}</h4>
+    <p class="text-sm text-neutral-500">{period}</p>
+    <p>{description}</p>
+</div>

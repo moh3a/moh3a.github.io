@@ -1,13 +1,20 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { CV_LINK, GITHUB_LINK, SEO } from '../../consts';
-import { languages } from '../../i18n/ui';
 import { Download, Github } from 'lucide-preact';
-import CVSection from '../../components/CVSection.astro';
+
+import { languages } from '../../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import Layout from '../../layouts/Layout.astro';
+import Section from '../../components/cv/Section.astro';
+import { CV_LINK, GITHUB_LINK, SEO, JOB_TITLE, USERNAME, EMAIL, PHONE_NUMBER } from '../../consts';
+import Card from '../../components/cv/Card.astro';
+import RateSkill from '../../components/cv/RateSkill.astro';
 
 export async function getStaticPaths() {
   return Object.keys(languages).map(path => ({ params: { lang: path } }))
 }
+ 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout title={SEO.cv.title} description={SEO.cv.desc}>
@@ -21,31 +28,27 @@ export async function getStaticPaths() {
 		<hr />
 	</div>
 	<div class="shadow-md my-10 rounded-md p-4">
-		<h3 class="text-center">AIT ABDELMALEK Mohamed</h3>
-		<h4 class="text-center"><span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Full-stack web developer</span></h4>
+		<h3 class="text-center">{t("home.name")}</h3>
+		<h4 class="text-center"><span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">{JOB_TITLE}</span></h4>
 	</div>
 	
-	<CVSection title="Credentials">
+	<Section title={t("cv.credentials.title")}>
 		<div class="flex flex-wrap justify-center items-center gap-x-10">
-			<p >Zeralda, Algeria</p>
-			<p >aitabdelmalekma@gmail.com</p>
+			<p >{t("cv.credentials.city")}</p>
+			<p >{EMAIL}</p>
 			<a href={GITHUB_LINK} rel="noreferrer" target="_blank">
 				<p>
-					<Github class="inline" />{" "}<span>moh3a</span>
+					<Github class="inline" />{" "}<span>{USERNAME}</span>
 				</p>
 			</a>
-			<p >(+213) 555-83-93-15</p>
+			<p dir="ltr">{PHONE_NUMBER}</p>
 		</div>
-	</CVSection>
-	<CVSection title="Professional Profile">
-		<p>
-			Professional, with many years of experience in (after-sale) customer service and SMD production, combined with a solid academic background in the field of geotechnics and a strong aptitude for acquiring new knowledge.
-		</p>
-		<p>
-			Software development is my passion, being self-taught and ready to start a careet in web development. Able to both work in a team and function independently, I demonstrate a strong sense of organization and team spirit.
-		</p>
-	</CVSection>
-	<CVSection title="Projects">
+	</Section>
+	<Section title={t("cv.professional_profile.title")}>
+		<p>{t("cv.professional_profile.p1")}</p>
+		<p>{t("cv.professional_profile.p2")}</p>
+	</Section>
+	<Section title="Projects">
 		<div class="p-4 m-2">
 			<h3><Github class="inline" /> moh3a/ae_sdk</h3>
 			<p class="py-4">A library in Typescript that follows Aliexpress guidelines to compose and encrypt requests, and pass API parameters in type-safe and normalized methods.</p>
@@ -54,144 +57,93 @@ export async function getStaticPaths() {
 			<h3><Github class="inline" /> moh3a/reglini</h3>
 			<p class="py-4">A full-stack ecommerce web application (react.js, next.js, PWA, prisma, postgres, supabase, vercel) to allow full access to Aliexpress products and launch orders by paying in Algerian dinars.</p>
 		</div>
-	</CVSection>
-	<CVSection title="Education">
-		<div class="p-4 m-2">
-			<h4>Master in Engineering Geology and Geotechnics</h4>
-			<p class="text-sm text-neutral-500">September 2017 • July 2019</p>
-		</div>
-		<div class="p-4 m-2">
-			<h4>Bachelor in Applied Geology and Geotechnics</h4>
-			<p class="text-sm text-neutral-500">September 2014 • July 2017</p>
-		</div>
-	</CVSection>
-	<CVSection title="Experience">
-		<div class="p-4 m-2">
-			<h4>Electronics maintenance engineer in after-sales service • SARL SACOMI</h4>
-			<p class="text-sm text-neutral-500">November 2020 • Current</p>
-			<p>Reception of customers who encounter problems with the company's products (TV,
-			mixers, smartphones, etc.), recording of all entries, diagnosing and resolving
-			breakdowns (repair or change of parts) and monitoring of checkout and recovery.</p>
-		</div>
-		<div class="p-4 m-2">
-			<h4>SMT Engineer • SARL SACOMI</h4>
-			<p class="text-sm text-neutral-500">Octobre 2019 • November 2020</p>
-			<p>Ensure the programming of SMT machines, the production of SMD cards to
-			standards and the reflow in the event of defective cards.</p>
-		</div>
-	</CVSection>
-	<CVSection title="Skills">
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				<img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 95 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				95%
-			</div>
-		</div>
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				<img alt="React.js" src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 80 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				80%
-			</div>
-		</div>
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				<img alt="Next.js" src="https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white"/>
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 80 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				80%
-			</div>
-		</div>
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				<img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=for-the-badge&logo=Node.js&logoColor=white" />
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 90 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				90%
-			</div>
-		</div>
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				<img alt="Astro" src="https://img.shields.io/badge/-Astro-FF5D01?style=for-the-badge&logo=Astro&logoColor=white" />
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 70 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				70%
-			</div>
-		</div>
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				<img alt="Postgres" src="https://img.shields.io/badge/-PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white" />
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 75 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				75%
-			</div>
-		</div>
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				<img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white" />
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 90 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				90%
-			</div>
-		</div>
-	</CVSection>
-	<CVSection title="Languages">
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				Arab
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 90 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				Native
-			</div>
-		</div>
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				French
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 85 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				Fluent
-			</div>
-		</div>
-		<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
-			<div class="col-span-2 items-center">
-				English
-			</div>
-			<div class="col-span-6 md:col-span-9 flex items-center">
-				<div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: 75 + "%" }} />
-			</div>
-			<div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
-				Proficient
-			</div>
-		</div>
-	</CVSection>
+	</Section>
+	<Section title="Education">
+		<Card 
+			title="Master in Engineering Geology and Geotechnics"
+			period="September 2017 • July 2019"
+			/>
+		<Card 
+			title="Bachelor in Applied Geology and Geotechnics"
+			period="September 2014 • July 2017"
+			/>
+	</Section>
+	<Section title="Experience">
+		<Card 
+			title="Electronics maintenance engineer in after-sales service • SARL SACOMI"
+			period="November 2020 • Current"
+			description={`Reception of customers who encounter problems with the company's products (TV,mixers, smartphones, etc.), recording of all entries, diagnosing and resolving
+			breakdowns (repair or change of parts) and monitoring of checkout and recovery.`}
+			/>
+		<Card 
+			title="SMT Engineer • SARL SACOMI"
+			period="Octobre 2019 • November 2020"
+			description={`Ensure the programming of SMT machines, the production of SMD cards to
+			standards and the reflow in the event of defective cards.`}
+			/>
+	</Section>
+	<Section title="Skills">
+		<RateSkill
+			rate={95}
+			rateDesc="95%"
+		>
+			<img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+		</RateSkill>
+		<RateSkill 
+			rate={80}
+			rateDesc="80%"
+		>
+			<img alt="React.js" src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
+		</RateSkill>
+		<RateSkill 
+			rate={80}
+			rateDesc="80%"
+		>
+			<img alt="Next.js" src="https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white"/>
+		</RateSkill>
+		<RateSkill 
+			rate={90}
+			rateDesc="90%"
+		>
+			<img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=for-the-badge&logo=Node.js&logoColor=white" />
+		</RateSkill>
+		<RateSkill 
+			rate={70}
+			rateDesc="70%"
+		>
+			<img alt="Astro" src="https://img.shields.io/badge/-Astro-FF5D01?style=for-the-badge&logo=Astro&logoColor=white" />
+		</RateSkill>
+		<RateSkill 
+			rate={75}
+			rateDesc="75%"
+		>
+			<img alt="Postgres" src="https://img.shields.io/badge/-PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white" />
+		</RateSkill>
+		<RateSkill 
+			rate={90}
+			rateDesc="90%"
+		>
+			<img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white" />
+		</RateSkill>
+	</Section>
+	<Section title="Languages">
+		<RateSkill 
+			rate={90}
+			rateDesc="Native"
+		>
+			Arab
+		</RateSkill>
+		<RateSkill 
+			rate={85}
+			rateDesc="Fluent"
+		>
+			French
+		</RateSkill>
+		<RateSkill 
+			rate={85}
+			rateDesc="Proficient"
+		>
+			English
+		</RateSkill>
+	</Section>
 </Layout>

@@ -1,6 +1,11 @@
-export const SITE_NAME = "moh3a";
+export const USERNAME = "moh3a";
+export const SITE_NAME = USERNAME;
 export const SITE_TITLE = `Welcome | ${SITE_NAME}`;
 export const SITE_DESCRIPTION = "Welcome to my small corner of the web.";
+
+export const JOB_TITLE = "Full-stack web developer";
+export const EMAIL = "aitabdelmalekma@gmail.com";
+export const PHONE_NUMBER = "(+213) 555-83-93-15";
 
 export const SEO = {
   projects: {

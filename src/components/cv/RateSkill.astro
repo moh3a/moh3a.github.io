@@ -1,0 +1,19 @@
+---
+type Props = {
+    rate: number,
+    rateDesc: string
+};
+const { rate, skill, rateDesc } = Astro.props;
+---
+
+<div class="grid gap-x-4 grid-cols-8 md:grid-cols-12 p-1 m-1">
+    <div class="col-span-2 items-center">
+        <slot />
+    </div>
+    <div class="col-span-6 md:col-span-9 flex items-center">
+        <div class="h-2 md:h-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" style={{ width: rate + "%" }} />
+    </div>
+    <div class="col-span-0 hidden md:flex md:col-span-1 justify-end items-center">
+        {rateDesc}
+    </div>
+</div>

@@ -1,22 +1,26 @@
-import Layout from "../../layouts/MdxPageLayout.astro";
 import { languages } from "../../i18n/ui";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import Layout from "../../layouts/MdxPageLayout.astro";
 import Project from "../../components/Project.astro";
-import { SEO } from "../../consts";
+import { SEO, USERNAME } from "../../consts";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((path) => ({ params: { lang: path } }));
 }
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 <Layout title={SEO.projects.title} description={SEO.projects.desc}>
   <Project
-    user="moh3a"
+    user={USERNAME}
     repo="ae_sdk"
     desc="A simple and type-safe SDK for Aliexpress (system tools, dropshipping and affiliate) APIs."
     repoTopLangShieldLink="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white"
     tags={["typescript", "sdk", "aliexpress"]}
   />
   <Project
-    user="moh3a"
+    user={USERNAME}
     repo="reglini"
     desc="An ecommerce for shopping from Aliexpress in algerian dinars."
     website="https://reglini-dz.com"
