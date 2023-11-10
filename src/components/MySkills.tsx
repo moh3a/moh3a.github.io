@@ -1,6 +1,11 @@
 import { useSignal, useSignalEffect } from "@preact/signals";
+import { useTranslations } from "../i18n/utils";
 
-export default function MySkills() {
+interface MySkillsProps {
+  lang: "en" | "fr" | "ar";
+}
+
+export default function MySkills({ lang }: MySkillsProps) {
   const skills = [
     {
       gradient: "from-pink-500 to-violet-500",
@@ -18,7 +23,7 @@ export default function MySkills() {
       gradient: "from-amber-500 to-pink-500",
       value: "Website and landing page design",
     },
-  ];
+  ] as const;
 
   const idx = useSignal(0);
   useSignalEffect(() => {
@@ -30,10 +35,12 @@ export default function MySkills() {
     };
   });
 
+  const t = useTranslations(lang);
+
   return (
     <div class="my-16">
       <p>
-        I am a quick learner and specialize in
+        {t("home.sell")}
         <br />
         <span
           class={`bg-clip-text font-bold text-transparent bg-gradient-to-r ${

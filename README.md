@@ -2,5 +2,4 @@
 
 ## todo
 
-- add View Transitions
-- add [adsense](https://adsense.google.com/start/)
+- add [adsense](https://adsense.google.com/start/) and google analytics

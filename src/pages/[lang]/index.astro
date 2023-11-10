@@ -25,13 +25,13 @@ const t = useTranslations(lang);
     </div>
     <img src={`/profile.jpg`} alt="moh3a's profile image" class="z-0 rounded-full basis-1/4 w-40" />
   </div>
-  <MySkills client:only />
+  <MySkills client:only lang={lang} />
   <a 
     href={LINKEDIN_LINK} 
     target="_blank" 
     rel="noreferrer" 
     class="underline decoration-[var(--primary)]" >
-    Get in touch 
-    <ArrowRight class={`inline hover:animate-bounce ${lang === "ar" && "rotate-180"}`} />
+    {t("home.getintouch")}{" "}
+    <ArrowRight class={`inline ${lang === "ar" && "rotate-180"}`} />
   </a>
 </Layout>
