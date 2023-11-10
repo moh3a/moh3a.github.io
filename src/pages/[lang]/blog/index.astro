@@ -3,21 +3,21 @@ import { getCollection } from 'astro:content';
 
 import FormattedDate from '../../../components/FormattedDate.astro';
 import Layout from '../../../layouts/Layout.astro';
-import { SEO } from '../../../consts';
 import { languages } from '../../../i18n/ui';
-import { getLangFromUrl } from '../../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
   return Object.keys(languages).map(path => ({ params: { lang: path } }))
 }
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const posts = (await getCollection('blog')).filter(page => page.slug.split('/')[0] === lang).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
-<Layout title={SEO.blog.title} description={SEO.blog.desc}>
+<Layout title={t("seo.blog.title")} description={t("seo.blog.description")}>
     <style>
         ul {
             display: flex;

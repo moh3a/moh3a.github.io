@@ -1,8 +1,9 @@
+---
 import { languages } from "../../i18n/ui";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import Layout from "../../layouts/MdxPageLayout.astro";
 import Project from "../../components/Project.astro";
-import { SEO, USERNAME } from "../../consts";
+import {  USERNAME } from "../../consts";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((path) => ({ params: { lang: path } }));
@@ -10,8 +11,9 @@ export async function getStaticPaths() {
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+---
 
-<Layout title={SEO.projects.title} description={SEO.projects.desc}>
+<Layout title={t("seo.projects.title")} description={t("seo.projects.description")}>
   <Project
     user={USERNAME}
     repo="ae_sdk"

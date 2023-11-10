@@ -9,7 +9,16 @@ export default defineConfig({
   site: "https://moh3a.github.io",
   integrations: [
     mdx(),
-    sitemap(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en',
+          es: 'fr',
+          fr: 'ar',
+        },
+      },
+    }),
     tailwind({
       applyBaseStyles: false,
     }),

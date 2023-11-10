@@ -160,3 +160,50 @@ mark {
   /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
 }
+
+/*
+  SCROLL BAR
+*/
+body::-webkit-scrollbar {
+  width: 6px; /* width of the entire scrollbar */
+  height: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--background); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--foreground); /* color of the scroll thumb */
+  border-radius: 25px; /* roundness of the scroll thumb */
+  border: 2px solid transparent; /* creates padding around scroll thumb */
+}
+
+@media (max-width: 1024px) {
+  body::-webkit-scrollbar {
+    width: 2px; /* width of the entire scrollbar */
+    height: 8px;
+  }
+}
+
+div::-webkit-scrollbar {
+  width: 6px; /* width of the entire scrollbar */
+  height: 8px;
+}
+
+div::-webkit-scrollbar-track {
+  background: var(--background); /* color of the tracking area */
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: var(--foreground); /* color of the scroll thumb */
+  border-radius: 25px; /* roundness of the scroll thumb */
+  border: 2px solid transparent; /* creates padding around scroll thumb */
+}
+
+@media (max-width: 1024px) {
+  div::-webkit-scrollbar {
+    width: 2px; /* width of the entire scrollbar */
+    height: 8px;
+  }
+}

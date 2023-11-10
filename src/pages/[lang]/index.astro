@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION,  LINKEDIN_LINK } from '../../consts';
+import { LINKEDIN_LINK } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
 import { getLangFromUrl,useTranslations } from '../../i18n/utils';
 import { languages } from '../../i18n/ui';
@@ -14,7 +14,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={t("seo.home.title")} description={t("seo.home.description")}>
   <div class="my-10 flex justify-between items-center">
     <div class="relative z-10 text-2xl sm:text-3xl md:text-5xl basis-3/4">
       {t('home.mynameis')}
@@ -26,5 +26,12 @@ const t = useTranslations(lang);
     <img src={`/profile.jpg`} class="z-0 rounded-full basis-1/4 w-40" />
   </div>
   <MySkills client:only />
-  <a href={LINKEDIN_LINK} target="_blank" rel="noreferrer" class="underline decoration-[var(--primary)]" >Get in touch <ArrowRight class="inline hover:animate-bounce" /> </a>
+  <a 
+    href={LINKEDIN_LINK} 
+    target="_blank" 
+    rel="noreferrer" 
+    class="underline decoration-[var(--primary)]" >
+    Get in touch 
+    <ArrowRight class={`inline hover:animate-bounce ${lang === "ar" && "rotate-180"}`} />
+  </a>
 </Layout>
