@@ -1,6 +1,4 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
 import '@fontsource/ibm-plex-serif';
 import '../styles/global.css';
 
@@ -17,10 +15,11 @@ const { title, description, image = `/blog-placeholder-1.jpg` } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+  name="viewport"
+  content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+/>
 <link rel="icon" type="image/svg+xml" href={`/favicon.ico`} />
+<meta name="theme-color" content="#8b5cf6" />
 <meta name="generator" content={Astro.generator} />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
@@ -45,6 +44,21 @@ const { title, description, image = `/blog-placeholder-1.jpg` } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- <script is:inline>
+  const locale = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("locale")) {
+      return localStorage.getItem("locale");
+    }
+    if (navigator.language) {
+      return navigator.language.split("-")[0];
+    }
+    return "en";
+  })();
+
+  console.log(locale);
+  window.localStorage.setItem("locale", locale);
+</script> -->
 
 <script is:inline>
   const theme = (() => {

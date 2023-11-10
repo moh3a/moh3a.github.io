@@ -48,41 +48,39 @@ const t = useTranslations(lang);
 		<p>{t("cv.professional_profile.p1")}</p>
 		<p>{t("cv.professional_profile.p2")}</p>
 	</Section>
-	<Section title="Projects">
+	<Section title={t("cv.projects.title")}>
 		<div class="p-4 m-2">
 			<h3><Github class="inline" /> moh3a/ae_sdk</h3>
-			<p class="py-4">A library in Typescript that follows Aliexpress guidelines to compose and encrypt requests, and pass API parameters in type-safe and normalized methods.</p>
+			<p class="py-4">{t("cv.projects.ae_sdk.description")}</p>
 		</div>
 		<div class="p-4 m-2">
 			<h3><Github class="inline" /> moh3a/reglini</h3>
-			<p class="py-4">A full-stack ecommerce web application (react.js, next.js, PWA, prisma, postgres, supabase, vercel) to allow full access to Aliexpress products and launch orders by paying in Algerian dinars.</p>
+			<p class="py-4">{t("cv.projects.reglini.description")}</p>
 		</div>
 	</Section>
-	<Section title="Education">
+	<Section title={t("cv.education.title")}>
 		<Card 
-			title="Master in Engineering Geology and Geotechnics"
-			period="September 2017 • July 2019"
+			title={t("cv.education.master.title")}
+			period={`${t("cv.education.master.from")} •  ${t("cv.education.master.to")}`}
 			/>
 		<Card 
-			title="Bachelor in Applied Geology and Geotechnics"
-			period="September 2014 • July 2017"
-			/>
-	</Section>
-	<Section title="Experience">
-		<Card 
-			title="Electronics maintenance engineer in after-sales service • SARL SACOMI"
-			period="November 2020 • Current"
-			description={`Reception of customers who encounter problems with the company's products (TV,mixers, smartphones, etc.), recording of all entries, diagnosing and resolving
-			breakdowns (repair or change of parts) and monitoring of checkout and recovery.`}
-			/>
-		<Card 
-			title="SMT Engineer • SARL SACOMI"
-			period="Octobre 2019 • November 2020"
-			description={`Ensure the programming of SMT machines, the production of SMD cards to
-			standards and the reflow in the event of defective cards.`}
+			title={t("cv.education.bachelor.title")}
+			period={`${t("cv.education.bachelor.from")} • ${t("cv.education.bachelor.to")}`}
 			/>
 	</Section>
-	<Section title="Skills">
+	<Section title={t("cv.experience.title")}>
+		<Card 
+			title={t("cv.experience.sav.title")}
+			period={`${t("cv.experience.sav.from")} • ${t("cv.experience.sav.to")}`}
+			description={t("cv.experience.sav.description")}
+			/>
+		<Card 
+			title={t("cv.experience.smt.title")}
+			period={`${t("cv.experience.smt.from")} • ${t("cv.experience.smt.to")}`}
+			description={t("cv.experience.smt.description")}
+			/>
+	</Section>
+	<Section title={t("cv.skills.title")}>
 		<RateSkill
 			rate={95}
 			rateDesc="95%"
@@ -126,24 +124,24 @@ const t = useTranslations(lang);
 			<img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white" />
 		</RateSkill>
 	</Section>
-	<Section title="Languages">
+	<Section title={t("cv.languages.title")}>
 		<RateSkill 
 			rate={90}
-			rateDesc="Native"
+			rateDesc={t("cv.languages.rate.fluent")}
 		>
-			Arab
+			{t("cv.languages.arab")}
 		</RateSkill>
 		<RateSkill 
 			rate={85}
-			rateDesc="Fluent"
+			rateDesc={t("cv.languages.rate.proficient")}
 		>
-			French
+			{t("cv.languages.french")}
 		</RateSkill>
 		<RateSkill 
 			rate={85}
-			rateDesc="Proficient"
+			rateDesc={t("cv.languages.rate.proficient")}
 		>
-			English
+			{t("cv.languages.english")}
 		</RateSkill>
 	</Section>
 </Layout>

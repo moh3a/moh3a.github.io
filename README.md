@@ -2,7 +2,5 @@
 
 ## todo
 
-- translate `projects`, `cv` and `about`
-- serif arabic font
 - add View Transitions
 - add [adsense](https://adsense.google.com/start/)
