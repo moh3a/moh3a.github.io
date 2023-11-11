@@ -2,7 +2,7 @@
 import '@fontsource/ibm-plex-serif';
 import '../styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
-import { GTag } from '../consts';
+import { GOOGLE_TAG_ID, GOOGLE_TAG_MANAGER_ID } from '../consts';
 
 interface Props {
 	title: string;
@@ -64,7 +64,8 @@ const { title, description, image = `/blog-placeholder-1.jpg` } = Astro.props;
   window.localStorage.setItem("locale", locale);
 </script> -->
 
-<script is:inline>
+<script is:inline>import { GOOGLE_TAG_MANAGER_ID } from "../consts";
+
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
@@ -84,11 +85,20 @@ const { title, description, image = `/blog-placeholder-1.jpg` } = Astro.props;
 </script>
 
 <!-- Google tag (gtag.js) -->
-<script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GTag}`}></script>
+<script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}></script>
 <script type="text/partytown">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', GTag);
+  gtag('config', GOOGLE_TAG_ID);
+</script>
+
+<!-- Google Tag Manager -->
+<script type="text/partytown">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',GOOGLE_TAG_MANAGER_ID);
 </script>
