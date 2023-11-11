@@ -2,6 +2,7 @@
 import '@fontsource/ibm-plex-serif';
 import '../styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
+import { GTag } from '../consts';
 
 interface Props {
 	title: string;
@@ -80,4 +81,14 @@ const { title, description, image = `/blog-placeholder-1.jpg` } = Astro.props;
     document.documentElement.classList.add("dark");
   }
   window.localStorage.setItem("theme", theme);
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${GTag}`}></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', GTag);
 </script>

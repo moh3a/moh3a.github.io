@@ -1,7 +1,7 @@
 {
   "name": "moh3a",
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "moh3a",
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.2",
+    "@astrojs/partytown": "^2.0.2",
     "@astrojs/preact": "^3.0.1",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.2",
