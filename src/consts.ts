@@ -7,6 +7,7 @@ export const PHONE_NUMBER = "(+213) 555-83-93-15";
 
 export const GOOGLE_TAG_ID = "G-NYL6K2TMWE";
 export const GOOGLE_TAG_MANAGER_ID = "GTM-PTC54BLT";
+export const GOOGLE_ADSENSE_ACCOUNT_ID = "ca-pub-6976289689748425";
 
 export const LINKEDIN_LINK =
   "https://www.linkedin.com/in/mohamed-ait-abdelmalek-moh3a";

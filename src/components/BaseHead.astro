@@ -2,7 +2,7 @@
 import '@fontsource/ibm-plex-serif';
 import '../styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
-import { GOOGLE_TAG_ID, GOOGLE_TAG_MANAGER_ID } from '../consts';
+import { GOOGLE_ADSENSE_ACCOUNT_ID, GOOGLE_TAG_ID, GOOGLE_TAG_MANAGER_ID } from '../consts';
 
 interface Props {
 	title: string;
@@ -104,9 +104,9 @@ const { title, description, image = `/blog-placeholder-1.jpg` } = Astro.props;
 </script>
 
 <!-- Google AdSense Verification -->
-<meta name="google-adsense-account" content="ca-pub-6976289689748425">
+<meta name="google-adsense-account" content={GOOGLE_ADSENSE_ACCOUNT_ID}>
 <script 
   type="text/partytown"
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6976289689748425"
+  src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_ADSENSE_ACCOUNT_ID}`}
   crossorigin="anonymous">
 </script>
