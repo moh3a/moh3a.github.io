@@ -2,7 +2,7 @@
 import '@fontsource/ibm-plex-serif';
 import '../styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
-import { GOOGLE_ADSENSE_ACCOUNT_ID, GOOGLE_TAG_ID, GOOGLE_TAG_MANAGER_ID } from '../consts';
+import {  GOOGLE_TAG_ID } from '../consts';
 
 interface Props {
 	title: string;
@@ -49,23 +49,28 @@ const { title, description, image = `/blog-placeholder-1.jpg` } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<!-- <script is:inline>
-  const locale = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("locale")) {
-      return localStorage.getItem("locale");
-    }
-    if (navigator.language) {
-      return navigator.language.split("-")[0];
-    }
-    return "en";
-  })();
+<script is:inline>
+  const localeCookie = decodeURIComponent(document.cookie).split(";").find(c => c.includes("locale"));
+  if (!localeCookie) {
+    let preferredLang = "en";
+    const navigatorLang = navigator.language.split("-")[0];
+    if (navigatorLang.includes('fr')) preferredLang = "fr";
+    if (navigatorLang.includes('ar')) preferredLang = "ar";
+    document.cookie += "locale=" + preferredLang + ";";
+  }
+  // const locale = (() => {
+  //   if (typeof localStorage !== "undefined" && localStorage.getItem("locale")) {
+  //     return localStorage.getItem("locale");
+  //   }
+  //   if (navigator.language) {
+  //     return navigator.language.split("-")[0];
+  //   }
+  //   return "en";
+  // })();
+  // window.localStorage.setItem("locale", locale);
+</script>
 
-  console.log(locale);
-  window.localStorage.setItem("locale", locale);
-</script> -->
-
-<script is:inline>import { GOOGLE_TAG_MANAGER_ID } from "../consts";
-
+<script is:inline>
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
@@ -92,21 +97,4 @@ const { title, description, image = `/blog-placeholder-1.jpg` } = Astro.props;
   gtag('js', new Date());
 
   gtag('config', GOOGLE_TAG_ID);
-</script>
-
-<!-- Google Tag Manager -->
-<script type="text/partytown">
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer',GOOGLE_TAG_MANAGER_ID);
-</script>
-
-<!-- Google AdSense Verification -->
-<meta name="google-adsense-account" content={GOOGLE_ADSENSE_ACCOUNT_ID}>
-<script 
-  type="text/partytown"
-  src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_ADSENSE_ACCOUNT_ID}`}
-  crossorigin="anonymous">
 </script>

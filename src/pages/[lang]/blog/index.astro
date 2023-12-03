@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 
 import FormattedDate from '../../../components/FormattedDate.astro';
-import GoogleInFeedAd from '../../../components/ads/GoogleInFeedAd.astro';
 import Layout from '../../../layouts/Layout.astro';
 import { languages } from '../../../i18n/ui';
 import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
@@ -85,7 +84,6 @@ const posts = (await getCollection('blog')).filter(page => page.slug.split('/')[
         }
     </style>
     <section>
-        <GoogleInFeedAd />
         <ul>
             {
                 posts.map((post) => (

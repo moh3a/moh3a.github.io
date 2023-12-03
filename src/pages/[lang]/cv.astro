@@ -7,7 +7,6 @@ import Layout from '../../layouts/Layout.astro';
 import Section from '../../components/cv/Section.astro';
 import Card from '../../components/cv/Card.astro';
 import RateSkill from '../../components/cv/RateSkill.astro';
-import GoogleInArticleAd from '../../components/ads/GoogleInArticleAd.astro';
 import { CV_LINK, GITHUB_LINK, JOB_TITLE, USERNAME, EMAIL, PHONE_NUMBER } from '../../consts';
 
 export async function getStaticPaths() {
@@ -81,7 +80,6 @@ const t = useTranslations(lang);
 			description={t("cv.experience.smt.description")}
 			/>
 	</Section>
-	<GoogleInArticleAd />
 	<Section title={t("cv.skills.title")}>
 		<RateSkill
 			rate={95}
